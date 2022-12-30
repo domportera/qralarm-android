@@ -386,11 +386,40 @@ fun SettingsScreen(
 
             Spacer(modifier = Modifier.height(MaterialTheme.space.large))
 
-            CheckboxEntry(
-                textId = R.string.fast_minutes_control,
-                onChange = settingsViewModel::handleFastMinutesControl,
-                determineIfChecked = { uiState.value.fastMinutesControl }
-            )
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Text(
+                    modifier = Modifier
+                        .padding(end = MaterialTheme.space.large)
+                        .weight(1f),
+                    text = stringResource(R.string.fast_minutes_control),
+                    style = MaterialTheme.typography.h2.copy(fontWeight = FontWeight.Normal)
+                )
+
+                CompositionLocalProvider(LocalMinimumTouchTargetEnforcement provides false) {
+                    Switch(
+                        checked = uiState.value.fastMinutesControl,
+                        onCheckedChange = settingsViewModel::handleFastMinutesControl,
+                        colors = SwitchDefaults.colors(
+                            checkedThumbColor = MaterialTheme.colors.secondary,
+                            uncheckedThumbColor = MaterialTheme.colors.onPrimary,
+                            checkedTrackColor = MaterialTheme.colors.secondary,
+                            uncheckedTrackColor = MaterialTheme.colors.onPrimary,
+                            checkedTrackAlpha = 0.5f,
+                            uncheckedTrackAlpha = 0.5f
+                        ),
+                        modifier = Modifier
+                            .padding(
+                                horizontal = 20.dp,
+                                vertical = MaterialTheme.space.medium
+                            )
+                            .scale(1.5f)
+                    )
+                }
+            }
 
             Spacer(modifier = Modifier.height(MaterialTheme.space.large))
 

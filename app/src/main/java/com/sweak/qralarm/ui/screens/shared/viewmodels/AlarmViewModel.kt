@@ -184,8 +184,8 @@ class AlarmViewModel @Inject constructor(
                 return
             }
         } else {
-            var alarming = false
-            var requireScanAlways = false
+            var alarming : Boolean
+            var requireScanAlways : Boolean
             runBlocking {
                 alarming = dataStoreManager.getBoolean(DataStoreManager.ALARM_ALARMING).first()
                 requireScanAlways = dataStoreManager.getBoolean(DataStoreManager.REQUIRE_SCAN_ALWAYS).first()
