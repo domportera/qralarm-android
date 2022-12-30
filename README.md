@@ -1,3 +1,15 @@
+# What makes this fork different
+
+- An option to hasten the minutes UI speed
+- An option to allow for alarm dismissal without scanning before the alarm goes off
+- Displays the amount of time until your alarm (both before and after it is set)
+
+Unfortunately my builds are not signed as I'm new to kotlin/java-style Android app development and haven't put in the time to figure that out. But I promise there's no funny business here. For funny business, please submit a feature request.
+
+If you use my fork and like this application, please send your thanks to the [original author](https://github.com/sweakpl/qralarm-android) :)
+
+<br/>
+
 <p align="center">
    <img src="./fastlane/metadata/android/en-US/images/icon.png" width="192" height="192"/>
 </p>
