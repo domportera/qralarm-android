@@ -34,7 +34,7 @@ fun ScannerScreen(
     navController: NavHostController,
     alarmViewModel: AlarmViewModel,
     settingsViewModel: SettingsViewModel,
-    acceptAnyBarcode: Boolean,
+    acceptAnyCodeType: Boolean,
     scannerMode: String?,
     finishableActionSideEffect: () -> Unit,
     lifecycleOwner: LifecycleOwner = LocalLifecycleOwner.current
@@ -67,10 +67,9 @@ fun ScannerScreen(
             }
 
             codeScanner = CodeScanner(context, codeScannerView).apply {
-                formats = when(acceptAnyBarcode) {
-                    true -> CodeScanner.ALL_FORMATS
-                    false -> listOf(BarcodeFormat.QR_CODE)
-                }
+                formats =
+                    if (acceptAnyCodeType) CodeScanner.ALL_FORMATS
+                    else listOf(BarcodeFormat.QR_CODE)
                 scanMode = ScanMode.CONTINUOUS
                 isTouchFocusEnabled = true
                 decodeCallback = DecodeCallback { result ->

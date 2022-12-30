@@ -56,8 +56,8 @@ class SettingsViewModel @Inject constructor(
                         )
                     ),
                     dismissAlarmCode = it.getString(DataStoreManager.DISMISS_ALARM_CODE).first(),
+                    acceptAnyCodeType = it.getBoolean(DataStoreManager.ACCEPT_ANY_CODE_TYPE).first(),
                     requireScanAlways = it.getBoolean(DataStoreManager.REQUIRE_SCAN_ALWAYS).first(),
-                    acceptAnyBarcode = it.getBoolean(DataStoreManager.ACCEPT_ANY_BARCODE).first(),
                     fastMinutesControl = it.getBoolean(DataStoreManager.FAST_MINUTES_CONTROL).first()
                 )
             )
@@ -266,14 +266,14 @@ class SettingsViewModel @Inject constructor(
         viewModelScope.launch {
             dataStoreManager.apply {
                 putBoolean(
-                    DataStoreManager.ACCEPT_ANY_BARCODE,
+                    DataStoreManager.ACCEPT_ANY_CODE_TYPE,
                     acceptAnyBarcode
                 )
             }
         }
 
         settingsUiState.value = settingsUiState.value.copy(
-            acceptAnyBarcode = acceptAnyBarcode
+            acceptAnyCodeType = acceptAnyBarcode
         )
     }
 

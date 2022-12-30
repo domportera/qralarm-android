@@ -59,7 +59,7 @@ class QRAlarmApp : Application() {
     private suspend fun setDefaultUsabilityPreferences() {
         dataStoreManager.apply {
             putBoolean(DataStoreManager.REQUIRE_SCAN_ALWAYS, false)
-            putBoolean(DataStoreManager.ACCEPT_ANY_BARCODE, false)
+            putBoolean(DataStoreManager.ACCEPT_ANY_CODE_TYPE, false)
             putBoolean(DataStoreManager.FAST_MINUTES_CONTROL, false)
         }
     }
