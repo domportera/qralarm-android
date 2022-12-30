@@ -1,5 +1,6 @@
 package com.sweak.qralarm.ui.screens.shared.viewmodels
 
+import androidx.compose.material.ExperimentalMaterialApi
 import android.os.Handler
 import android.os.Looper
 import androidx.compose.material.SnackbarDuration
@@ -23,6 +24,7 @@ import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.first
 import javax.inject.Inject
 
+@ExperimentalMaterialApi
 @InternalCoroutinesApi
 @ExperimentalPagerApi
 @ExperimentalPermissionsApi

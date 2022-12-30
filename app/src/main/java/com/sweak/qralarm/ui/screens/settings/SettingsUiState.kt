@@ -23,7 +23,8 @@ data class SettingsUiState(
     val showCameraPermissionDialog: Boolean = false,
     val showCameraPermissionRevokedDialog: Boolean = false,
     val showDismissCodeAddedDialog: Boolean = false,
-    val acceptAnyCodeType: Boolean = true
+    val acceptAnyCodeType: Boolean = false,
+    val showDisablingBarcodesSupportDialog: Boolean = false,
     val requireScanAlways: Boolean = false,
-    val fastMinutesControl: Boolean = true,
+    val fastMinutesControl: Boolean = true
 )
